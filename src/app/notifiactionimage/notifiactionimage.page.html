@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <!-- Your Page Title -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <h3 style="text-align: center;    margin-top: 5%;">{{titlenoti?.data}}</h3>
+  <img class="aligncenter-img" [src]="titlenoti?.notilink">
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Gallery
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ <p style="    text-align: center;
+ margin-top: 50px;
+ margin-bottom: 50px;
+ width: 98%;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+ <div class="main-div">
+  <img *ngFor="let reti of retrievedData" (click)="getimage(reti.gallerylink)" style="width:40%;    height: 128px;" [src]="reti.gallerylink">
+ </div>
+ <div style="margin-top:50px">
+  <img style="width: 100%;" [src]="setimage">
+ </div>
+ <button class="btn-image" (click)="previewimg()">Preview Image</button>
+</ion-content>

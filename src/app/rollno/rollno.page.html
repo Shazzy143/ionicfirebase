@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Roll Number
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <p style="margin-left: 24px;margin-right: 15px;">
+      BISEH has made it easy for students to get their roll number slips by just clicking. All
+      the information regarding issuance of roll number slips will be provided here.
+    </p>
+    <div>
+      <ion-list>
+        <ion-item (click)="callname('SSC-I')">
+          <span class="span-css">SSC-I</span>
+         
+            <h2 class="noti-app-call">Roll No of SSC part-I</h2>
+           
+          <ion-icon class="icon-adjustment" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item (click)="callname('SSC-II')">
+          <span class="span-css">SSC-II</span>
+         
+            <h2 class="noti-app-call">Roll No of SSC part-II</h2>
+           
+          <ion-icon class="icon-adjustment" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item (click)="callname('HSC-I')">
+          <span class="span-css">HSC-I</span>
+          
+            <h2 class="noti-app-call">Roll No of HSC part-I</h2>
+           
+          <ion-icon class="icon-adjustment" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item (click)="callname('HSC-II')">
+          <span class="span-css">HSC-II</span>
+          
+            <h2 class="noti-app-call">Roll No of HSC part-II</h2>
+           
+          <ion-icon class="icon-adjustment" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </div>
+</ion-content>

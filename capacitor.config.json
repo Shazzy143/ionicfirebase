@@ -1,0 +1,16 @@
+{
+	"appId": "io.Windex.trading",
+	"appName": "BISEH",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+		  "launchShowDuration": 3000,
+		  "backgroundColor": "#ffffffff",
+		  "androidSplashResourceName": "splash",
+		  "showSpinner": false,
+		  "splashFullScreen": true,
+		  "splashImmersive": true
+		}
+	}
+}

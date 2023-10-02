@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>webpage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <input type="file" (change)="handleFileUpload($event)">
+  <button (click)="readFile()">Read Excel</button>
+  <p>noti</p>
+  <input type="text" placeholder="add notification" [(ngModel)]="notidata">
+  <input type="file" (change)="createAndFetchData($event)">
+  <!-- handleFileUpload1 -->
+  <p>sheet</p>
+  <ion-item>
+    <ion-label>Select an option:</ion-label>
+    <ion-select [(ngModel)]="sheet">
+      <ion-select-option value="SSC-I">SSC-I</ion-select-option>
+      <ion-select-option value="SSC-II">SSC-II</ion-select-option>
+      <ion-select-option value="HSC-I">HSC-I</ion-select-option>
+      <ion-select-option value="HSC-II">HSC-II</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <input type="text" placeholder="add sheets data" [(ngModel)]="sheet1">
+  <input type="file" (change)="updateData($event)">
+  <p>modalpaper</p>
+  <ion-item>
+    <ion-label>Select an option:</ion-label>
+    <ion-select [(ngModel)]="modal">
+      <ion-select-option value="SSC-I">SSC-I</ion-select-option>
+      <ion-select-option value="SSC-II">SSC-II</ion-select-option>
+      <ion-select-option value="HSC-I">HSC-I</ion-select-option>
+      <ion-select-option value="HSC-II">HSC-II</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <input type="text" placeholder="add modal data" [(ngModel)]="modal1">
+  <input type="file" (change)="updateData1($event)">
+
+  <p>download</p>
+  <input type="file" (change)="handleFileUpload1($event)">
+
+  <p>fee</p>
+  <input type="file" (change)="handleFileUpload2($event)">
+
+  <!-- <p>slider1</p>
+  <input type="file" (change)="sliderone($event)"> -->
+  <p>slider1</p>
+  <input type="file" (change)="createAndFetchDataslider($event)">
+
+  <p>slider2</p>
+  <input type="file" (change)="createAndFetchDataslider2($event)">
+
+  <p>gallery</p>
+  <input type="file" (change)="createAndFetchDatagallery($event)">
+
+  <div *ngFor="let row of excelData">
+    <div *ngFor="let cell of row">
+      {{ cell }}
+    </div>
+  </div>
+
+
+
+  <h1 style="font-size: 37px;">Website</h1>
+</ion-content>

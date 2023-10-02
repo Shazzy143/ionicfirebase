@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">BISEH</string>
+    <string name="title_activity_main">BISEH</string>
+    <string name="package_name">io.Windex.trading</string>
+    <string name="custom_url_scheme">io.Windex.trading</string>
+</resources>

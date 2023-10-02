@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <p style="margin-left: 24px;">
+    Roll No. slips for {{data}} Annual Examination <br>
+    Please enter your registration number in order to search your roll no. slip
+  </p>
+  <div>
+    <input class="input-field" [(ngModel)]="rollno" type="text" placeholder="Roll No.">
+    <button *ngIf="sendingdata.length > 0" class="btn" (click)="pushcode()">Search</button>
+    <button *ngIf="sendingdata.length == 0" class="btn">Loading...</button>
+  </div>
+</ion-content>

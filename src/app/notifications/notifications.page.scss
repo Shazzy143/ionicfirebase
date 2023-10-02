@@ -1,0 +1,76 @@
+.header-img{
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+}
+.notification-banner-image{
+    width: 85px;
+}
+.notification-banner-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.noti-text-popup{
+    display: flex;
+    flex-direction: column;
+}
+.icon-adjustment{
+    position: relative;
+    margin-top: -7px;
+}
+.icon-size{
+    font-size: 28px;
+}
+.noti-app-call{  
+    margin-left: 25px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.homepage-slider-image{
+        width: 96%;
+    height: 165px;
+    margin-left: 2%;
+    border-radius: 10px;
+}
+.buttons-div{
+        width: 96%;
+    /*margin-left: 2%;*/
+    padding: 10px;
+        text-align: center;
+            overflow: auto;
+    white-space: nowrap;
+}
+.btn-slide{
+        background-color: #000;
+    color: #fff;
+    border-radius: 17px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+}
+.services-box{
+        background-color: #000;
+    color: #fff;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 10px;
+}
+.services-box p{
+        margin-top: 7px;
+    font-size: 13px;
+        margin-bottom: 0;
+}
+.service-icon{
+    font-size: 40px;
+}
+.other-services-img{
+    width: 80px;
+    height: 80px;
+}

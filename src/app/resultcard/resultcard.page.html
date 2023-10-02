@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <!-- Examination Results -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="pagetypetext == 'result'">
+    <img class="profile-img" src="../../assets/images/placeholder-profile-male-500x500.png">
+    <p style="text-align: center;
+    font-weight: bold;
+    font-size: 20px;">{{info?.NAME}}</p>
+
+    <ion-grid style="margin-top: 16%;">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Seat No:</ion-col>
+        <ion-col size="6">{{info?.[0]}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Student Name:</ion-col>
+        <ion-col size="6">{{info?.[2]}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Father Name:</ion-col>
+        <ion-col size="6">{{info?.[3]}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">PAPER PASS:</ion-col>
+        <ion-col *ngIf="info" size="6">{{info?.[4]}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Group:</ion-col>
+        <ion-col *ngIf="info" size="6">{{info?.[1]}}</ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <a href="">Slip</a> -->
+  </div>
+  <div *ngIf="pagetypetext == 'rollno'" >
+    <div id="captureElement">
+    <img class="profile-img" [src]="'../../assets/studentimage/PICTURES/' + info?.seatno + '.jpg'">
+    <p style="text-align: center;
+    font-weight: bold;
+    font-size: 20px;">{{info?.name}}</p>
+    
+    <ion-grid style="margin-top: 16%;">
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Seat No:</ion-col>
+        <ion-col size="6">{{info?.seatno}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Student Name:</ion-col>
+        <ion-col size="6">{{info?.name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Father Name:</ion-col>
+        <ion-col size="6">{{info?.fname}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Surname:</ion-col>
+        <ion-col size="6">{{info?.surname}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Date of birth:</ion-col>
+        <ion-col size="6">{{info?.dob}}</ion-col>
+      </ion-row>
+     
+      <!-- <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Papers & Marks:</ion-col>
+        <ion-col size="6">{{info?.before}}</ion-col>
+      </ion-row> -->
+      <!-- <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Sex:</ion-col>
+        <ion-col size="6">{{info?.district}}</ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Group:</ion-col>
+        <ion-col size="6">{{info?.group}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Institute:</ion-col>
+        <ion-col size="6">{{info?.institute}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">Exam  center:</ion-col>
+        <ion-col size="6">{{info?.examcenter?.colname}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1"></ion-col>
+        <ion-col size="4" style="text-align: right;">District:</ion-col>
+        <ion-col size="6">{{info?.district}}</ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
+    <!-- <ion-grid style="text-align: center;
+    margin-top: 55px;
+    width: 90%;">
+      <ion-row style="background-color: #233d54;
+      padding: 9px;
+      color: #fff;">
+        <ion-col>Name</ion-col>
+        <ion-col>Marks</ion-col>
+      </ion-row>
+      <ion-row [class.black-row]="item.key == 'GRADE' || item.key == 'TOTAL'" *ngFor="let item of data | keyvalue">
+        <ion-col>{{ item.key }}</ion-col>
+        <ion-col>{{ item.value }}</ion-col>
+      </ion-row>
+    </ion-grid> -->
+  </div>
+  <ion-icon style="position: absolute;
+  top: 0;
+  right: 7%;
+  font-size: 25px;" *ngIf="pagetypetext == 'rollno'" (click)="captureAndConvertToImage()" name="cloud-download-outline"></ion-icon>
+</ion-content>

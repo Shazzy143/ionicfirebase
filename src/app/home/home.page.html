@@ -1,0 +1,148 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons style="    margin-right: -48px;" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+    <img class="header-img" src="../../assets/images/icon.png">
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <div style="    position: absolute;
+  left: 1%;
+  top: 2%;
+  z-index: 99999;
+  color: #fff;">
+    <ion-menu-button style="font-size: 36px;"></ion-menu-button>
+  </div>
+  <div id="main-home-page">
+    <div>
+      <!-- <p style="    margin-left: 3%;
+      font-weight: bold;">Latest Events</p> -->
+      <ion-slides pager="true" [options]="slideOptsOne" style="max-width: 600px;">
+        <ion-slide *ngFor="let reti of retrievedData" style="width: 400px;">
+          <img style="width: 100%; height: 300px; object-fit: cover;" [src]="reti.sliderlink" />
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="main-div">
+    <div class="buttons-div">
+      <!-- <button (click)="createtable()">sending</button> -->
+      <button class="btn-slide" (click)="intropage()">Introduction</button>
+      <button class="btn-slide" (click)="aboutpage()">About Us</button>
+      <button class="btn-slide" (click)="contactuspage()">Contact Us</button>
+      <!-- <button class="btn-slide">Offices</button> -->
+    </div>
+    <div>
+      <!-- <p style="    margin-left: 3%;
+      font-weight: bold;">News</p> -->
+      <div style="    width: 90%;
+      margin-left: 5%;
+      text-align: center;
+      margin-top: -17px;
+      position: relative;
+      z-index: 99999999;">
+        <img style="    width: 75px;" src="../assets/images/53693f41-1a9c-49b6-9e59-5f1b9fe4ed49.jfif">
+        <p style="    margin-top: 0;">Board of Intermediate & Secondary Education Hyderabad</p>
+      </div>
+      <ion-slides style="    height: 200px !important;" pager="true" [options]="slideOptsOne1">
+        <!-- <ion-slide>
+         <div>
+          <h1 style="margin-bottom: 0;
+          margin-top: 35px;color: #233d54;    font-weight: bold;">Welcome</h1>
+          <p style="    margin: 0;color: #233d54;">Chairman BISE Hyderabad</p>
+          <p style="    margin: 0;color: #233d54;">Prof. Dr. Ahmed Ali Brohi</p>
+         </div>
+        </ion-slide> -->
+        <ion-slide *ngFor="let reti of retrievedData">
+          <img style="    border-radius: 25px;
+          width: 94%;" [src]="reti.sliderlink" />
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <!-- Date Sheets, Downloads, Notification -->
+    <div style="padding-bottom: 20px;">
+      <p style="    margin-left: 3%;
+      font-weight: bold;">Services</p>
+      <div style="    margin-left: 2%;
+        display: flex;overflow: scroll;margin-bottom: 30px;">
+        <div (click)="examsresult()" class="services-box">
+          <ion-icon class="service-icon" name="documents-outline"></ion-icon>
+          <p>Examination Results</p>
+        </div> 
+        <div (click)="bollnumberslip()" class="services-box">
+           <ion-icon class="service-icon" name="id-card-outline"></ion-icon>
+           <p>Roll Number Slips</p>
+         </div> 
+         <div (click)="datasheet()" class="services-box">
+           <ion-icon class="service-icon" name="document-outline"></ion-icon>
+           <p>Date Sheets</p>
+         </div> 
+      </div>
+      <div style="    margin-left: 2%;
+        display: flex;">
+         <div (click)="notification1()" class="services-box">
+          <ion-icon class="service-icon" name="notifications-outline"></ion-icon>
+          <p>Notifications</p>
+        </div> 
+        <div (click)="downloads()" class="services-box">
+          <ion-icon class="service-icon" name="download-outline"></ion-icon>
+          <p>Download</p>
+        </div> 
+        <div (click)="fees()" class="services-box">
+          <ion-icon class="service-icon" name="wallet-outline"></ion-icon>
+          <p>Fee/Due</p>
+        </div> 
+      </div>
+      
+    </div>
+    </div>
+    <!-- <div>
+      <p style="    margin-left: 3%;
+      font-weight: bold;">More Services</p>
+      <div style="    margin-left: 2%;
+    display: flex;
+    overflow: scroll;    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;">
+        <div (click)="notification1()">
+          <img class="other-services-img" src="../../assets/images/noti.png">
+          <p style="text-align: center;">Notifications</p>
+        </div>
+        <div (click)="downloads()">
+          <img class="other-services-img" src="../../assets/images/scholarship.png">
+          <p style="text-align: center;">Download</p>
+        </div>
+        <div (click)="fees()">
+          <img class="other-services-img" src="../../assets/images/institute.png">
+          <p style="text-align: center;">Fee/Dues</p>
+        </div>
+      </div>
+    </div> -->
+     <!-- <div>
+      <p style="    margin-left: 3%;
+      font-weight: bold;">Institure Services</p>
+      <div style="    margin-left: 2%;
+    display: flex;
+    overflow: scroll;">
+         <div class="services-box">
+           <ion-icon class="service-icon" name="document-outline"></ion-icon>
+           <p>Examination Results</p>
+         </div> 
+          <div class="services-box">
+           <ion-icon class="service-icon" name="document-outline"></ion-icon>
+           <p>Roll Number Slips</p>
+         </div> 
+          <div class="services-box">
+           <ion-icon class="service-icon" name="document-outline"></ion-icon>
+           <p>Online Applications</p>
+         </div> 
+          <div class="services-box">
+           <ion-icon class="service-icon" name="document-outline"></ion-icon>
+           <p>Fee Information</p>
+         </div> 
+      </div>
+    </div> -->
+  </div>
+</ion-content>

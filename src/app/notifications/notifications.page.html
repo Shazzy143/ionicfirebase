@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="notification-banner-container">
+    <img class="notification-banner-image" src="../../assets/images/53693f41-1a9c-49b6-9e59-5f1b9fe4ed49.jfif">
+    <h1 style="margin-left: 10px;">News and Notifications</h1>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let reti of retrievedData">
+      <ion-icon class="icon-adjustment icon-size" name="notifications" ></ion-icon>
+      <ion-label (click)="closemodal(reti)">
+        <h2 class="noti-app-call">{{reti.data}}</h2>
+        <p style="margin-left: 25px;font-size: 12px;">Date {{reti.currentDate}}</p>
+      </ion-label>
+      <ion-icon class="icon-adjustment" slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

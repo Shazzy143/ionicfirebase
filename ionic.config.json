@@ -1,0 +1,7 @@
+{
+  "name": "BISEH",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

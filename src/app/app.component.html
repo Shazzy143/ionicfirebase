@@ -1,0 +1,74 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <img class="mainicon" src="../assets/images/53693f41-1a9c-49b6-9e59-5f1b9fe4ed49.jfif">
+          <h3 style="    text-align: center;
+          margin-bottom: 0;">BISE</h3>
+          <p style="    text-align: center;
+          margin-top: 0;
+          margin-bottom: 0;">Board of Intermediate</p>
+          <p style="    text-align: center;
+          margin-top: 0;    margin-bottom: 75px;">Secondary Education Hyderabad</p>
+          <!-- <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Chairman</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <p>Phone Number</p>
+                <p>+923322711184</p>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group> -->
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item (click)="navigateToPage(p.url)" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <!-- <ion-list id="labels-list">
+          <ion-list-header>Labels</ion-list-header>
+
+          <ion-item *ngFor="let label of labels" lines="none">
+            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+            <ion-label>{{ label }}</ion-label>
+          </ion-item>
+        </ion-list> -->
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <!-- <ion-title>Modal</ion-title> -->
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="notification-banner-container">
+          <img class="notification-banner-image" src="../../assets/images/53693f41-1a9c-49b6-9e59-5f1b9fe4ed49.jfif">
+          <h1 style="margin-left: 10px;">News and Notifications</h1>
+        </div>
+      
+        <ion-list>
+          <ion-item *ngFor="let reti of retrievedData">
+            <ion-icon class="icon-adjustment icon-size" name="notifications" ></ion-icon>
+            <ion-label (click)="closemodal(reti)">
+              <h2 class="noti-app-call">{{reti.data}}</h2>
+              <p style="margin-left: 25px;font-size: 12px;">Date {{reti.currentDate}}</p>
+            </ion-label>
+            <ion-icon class="icon-adjustment" slot="end" name="chevron-forward-outline"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-app>

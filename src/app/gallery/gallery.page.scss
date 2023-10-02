@@ -1,0 +1,19 @@
+.main-div{
+    white-space: nowrap;
+    overflow: scroll;
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+.btn-image{
+    background-color: #233d54;
+    color: #fff;
+    padding: 13px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    top: 22px;
+}

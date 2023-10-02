@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Examination Results
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <p style="margin-left: 24px;    margin-right: 10px;">
+      Students will not have to queue up to see their results. Students can now watch results online by searching their roll number.
+    </p>
+    <div class="main-div">
+      <h2>Examination Results</h2>
+      
+      <p style="margin-bottom: 0;">Group</p>
+      <!-- <input style="    background-color: #fff;" [(ngModel)]="group" placeholder="" class="inputt" type="text"> -->
+      <!-- groupsdata -->
+      <ion-select [(ngModel)]="group" style="border: solid 1px;" mode="ios">
+        <ion-select-option [value]="option" *ngFor="let option of groupsdata">{{option}}</ion-select-option>
+      </ion-select>
+      <p style="margin-bottom: 0;">Class</p>
+      <ion-button class="btnclas" (click)="presentActionSheet()">{{resultclass}}</ion-button>
+      <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
+      <p style="margin-bottom: 0;">Roll Number</p>
+      <input style="    background-color: #fff;" [(ngModel)]="rollno" class="inputt" type="number">
+      <button *ngIf="resultshow.length > 0" (click)="sendpage()" class="searchbtn">Search</button>
+      <button *ngIf="resultshow.length < 1" class="searchbtn">Loading...</button>
+    </div>
+</ion-content>
